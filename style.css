@@ -1,0 +1,727 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+/* animation */
+@keyframes scale{
+    0%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes moveBanner{
+    0%{
+        transform: translateY(20em) rotateY(-20deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0); opacity:1;
+    }
+}
+/* .container{
+    height: 100vh;
+    width: 100%;
+} */
+.menu{
+    width: 2em;
+    height: 3vh;
+    position: fixed;
+    top: 8vh;
+    right: 1vw;
+    z-index: 2;
+    transition: right 0.7s;
+}
+.line{
+    height: 100%;
+    width: 100%;
+}
+.line img{
+    height: 100%;
+    width: 100%;
+}
+.header{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    perspective: 50em;
+    overflow: hidden;
+}
+.imgDiv{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.imgDiv img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: scale 5s;
+}
+.banner{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+}
+.banner h1{
+    font-size: 3em;
+    line-height: 130%;
+    opacity: 0;
+    animation: moveBanner 5s forwards;
+}
+.banner p{
+    font-size: 1em;
+    flex-wrap: wrap;
+    width: 70%;
+    opacity: 0;
+    animation: moveBanner 5s forwards;
+}
+.banner button{
+    background-color: #c29525;
+    color: white;
+    border: none;
+    margin-top: 2vh;
+    height: 7vh;
+    width: 30%;
+    font-size: 1.2em;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0;
+    animation: moveBanner 5s forwards;
+}
+
+.sideBar{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 20vw;
+    right: 0;
+    background-color: white;
+    transition: right 0.5s;
+    overflow: hidden;
+    z-index: 50;
+}
+.crossImg{
+    height: 4vh;
+    width: 7vw;
+    position: absolute;
+    top: 8vh;
+    left: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.crossImg img{
+    height: 50%;
+    width: 20%;
+}
+/* .crossImg span{
+    position: absolute;
+    left: 3.5vw;
+    width: 70%;
+    height: 100%;
+    background-color: #e2b646;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+}
+.crossImg:hover span{
+    opacity: 1;
+    visibility: visible;
+}
+.crossImg span::before{
+    content: "";
+    position: absolute;
+    border-right: 1em #e2b646 solid;
+    border-bottom: 1em transparent solid;
+    border-top: 1em transparent solid;
+    border-left: 1em transparent solid;
+    top: 50%;
+    left: -2em;
+    transform: translateY(-50%);
+} */
+
+.menuList{
+    height: 50%;
+    width: 80%;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+}
+.menuItem{
+    height: 20%;
+}
+.menuLink{
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+.menuLink::before{
+    content: attr(data-content);
+    color: #c29525;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width .3s ease-in-out;
+}
+.menuLink:hover::before{
+    width: 100%;
+}
+.socialMedia{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 2vh;
+    left: 0;
+}
+.icons{
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+}
+.icons img{
+    height: 100%;
+    width: 100%;
+}
+.hidden{
+    display: none;
+}
+/*---------------------------------------------------------*/
+/* About us Section */
+
+.aboutUs{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    position: relative;
+}
+.sectionHeader{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15%;
+    width: 100%;
+}
+.sectionHeading{
+    text-decoration: underline #e2b646;
+    font-size: 2em;
+}
+.services{
+    height: 80%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(6,3em);
+    grid-row-gap: 2em;
+}
+.service{
+    width: 100%;
+    margin-bottom: 1em;
+}
+.serviceHeader{
+    display: flex;
+    flex-direction: row;
+}
+.serviceHeader h3{
+    text-indent: 15%;
+    font-size: 1.5em;
+}
+.serviceText{
+    font-size: 1em;
+    text-align: justify;
+}
+.service:nth-child(1){
+    grid-column: 4/7;
+    grid-row: 1/3;
+}
+.service:nth-child(2){
+    grid-column: 3/6;
+    grid-row: 3/5;
+}
+.service:nth-child(3){
+    grid-column: 4/7;
+    grid-row: 5/-1;
+}
+.service:nth-child(4){
+    grid-column: 11/14;
+    grid-row: 1/3;
+}
+.service:nth-child(5){
+    grid-column: 12/15;
+    grid-row: 3/5;
+}
+.service:nth-child(6){
+    grid-column: 11/14;
+    grid-row: 5/-1;
+}
+.serviceHeader img{
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.aboutImgDiv{
+    grid-column: 7/11;
+    grid-row: 2/6;
+}
+.aboutImgDiv img{
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+    object-fit: cover;
+}
+/*---------------------------------------------------------*/
+/* Team page */
+.teamPage{
+    height: 100vh;
+    width: 100%;
+    background-color: #f5f5f5;
+    position: relative;
+}
+.sectionHeader{
+    position: absolute;
+    top: 5%;
+}
+.teamPicture{
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.teamCard{
+    height: 70%;
+    width: 25%;
+    position: relative;
+    box-shadow: 0 .5em 2em rgba(0,0,0,0.4);
+}
+.cardImg{
+    height: 100%;
+    width: 100%;
+}
+.cardImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5em;
+    transition: opacity 0.3s;
+}
+.teamCard:hover .cardImg img{
+    opacity: 0.5;
+}
+.cardInfo{
+    color: white;
+    width: 90%;
+    margin-left: 5%;
+    align-self: baseline;
+    position: absolute;
+    bottom: 5%;
+    visibility: hidden;
+    text-align: left justify;
+    transition: all 0.5s;
+    opacity: 0;
+}
+.cardInfo h2{
+    line-height: 1.5em;
+}
+.cardInfo h3{
+    line-height: 1em;
+}
+.cardInfo p{
+    font-size: .8em;
+}
+.teamCard:hover .cardInfo{
+    visibility: visible;
+    opacity: 1;
+}
+.cardInfo button{
+    background-color: #e2b646;
+    color: white;
+    border: transparent;
+    width: 25%;
+    border-radius: .2em;
+    cursor: pointer;
+}
+/*-------------------------------------------------------------*/
+/*Contact page*/
+.contactPage{
+    background-color: #464647;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.window{
+    height: 80vh;
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    display: flex;
+    flex-direction: row;
+    opacity: 0.9;
+}
+
+.imgWindow{
+    height: 100%;
+    width: 35%;
+}
+.imgWindow img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;    
+}
+.formWindow{
+    height: 100%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    position: relative;
+}
+.formWindow .sectionHeader{
+    position: absolute;
+    font-size: 2em;
+    top: 5%;   
+}
+.formWindow .sectionHeader h1{
+    text-decoration: none;
+}
+.formWindow form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+}
+.inputDiv{
+    margin-left: 10%;
+    height: 15%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+.inputDiv label{
+    position: absolute;
+    left: 0;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+.field{
+    width: 80%;
+    background-color: transparent;
+    border: none;
+    margin: 1em 0;
+    padding: 2em 1em 1em 0;
+    border-bottom: 0.1em dashed #636363;
+}
+.field:focus{
+    border-bottom: 0.1em solid #636363;
+}
+
+.inputLabel{
+    bottom: 1.5em;
+}
+.inputGroup{
+    height: 4em;
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+ }
+ .inputGroup label{
+    position: absolute;
+    left: 0;
+    font-size: 1em;
+    transition: all 0.3s;
+ }
+.message{
+    bottom: 1em;
+}
+.inputGroup textarea{
+    max-height: 5em;
+    max-width: 25em;
+    min-width: 15em;
+}
+.submitButton{
+    margin-top: 10%;
+    width: 65%;
+    height: 5vh;
+    position: relative;
+    right: 3%;
+    border: none;
+    font-size: 1.5em;
+    color: #f0f0f0;
+    background-color: #e2b646;
+    cursor: pointer;
+    box-shadow: .3rem,.1rem,rgba(0,0,0,1);
+}
+.field:focus~label{
+    transform: translateY(-3em);
+    font-size: .6em;
+}
+/*-----------------------------------------------------*/
+/*Footer*/
+.footer{
+    height: 15vh;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.copyRight{
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.copyText{
+    font-size: 1em;
+    color: #f0f0f0;
+}
+.socialMediaFooter{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.upArrow{
+    height: 5vh;
+    width: 3vw;
+    position: fixed;
+    right: 5vw;
+    bottom: 5vh;
+    cursor: pointer;
+}
+.upArrow img{
+    height: 100%;
+    width: 100%;
+}
+
+
+/*Media Queries*/
+@media screen and (max-width: 1200px){
+    .banner{
+        position: absolute;
+        top: 15%;
+        left: 10%;
+    }
+    .banner h1{
+        line-height: 100%;
+        font-size: 1.5em;
+    }
+    .banner p{
+        font-size: .7em;
+        width: 50%;
+    }
+    .banner button{
+        font-size: .8em;
+    }
+    .menuLink{
+        font-size: 1em;
+    }
+    .service:nth-child(1){
+        grid-column: 3/6;
+        grid-row: 1/3;
+    }
+    .service:nth-child(2){
+        grid-column: 2/5;
+        grid-row: 3/5;
+    }
+    .service:nth-child(3){
+        grid-column: 3/6;
+        grid-row: 5/-1;
+    }
+    .service:nth-child(4){
+        grid-column: 12/15;
+        grid-row: 1/3;
+    }
+    .service:nth-child(5){
+        grid-column: 13/16;
+        grid-row: 3/5;
+    }
+    .service:nth-child(6){
+        grid-column: 12/15;
+        grid-row: 5/-1;
+    }
+    .aboutImgDiv{
+        grid-column: 7/11;
+        grid-row: 2/5;
+    }
+    .serviceText{
+        font-size: .6em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .serviceHeader h3{
+        font-size: 1em;
+    }
+    .cardInfo h2{
+        line-height: 1em;
+        font-size: 1em;
+    }
+    .cardInfo h3{
+        line-height: .7em;
+        font-size: .7em;
+    }
+    .cardInfo p{
+        font-size: .5em;
+    }
+    .cardInfo button{
+        width: 45%;
+        font-size: .5em;
+    }
+    .window{
+        width: 70%;
+        position: absolute;
+        top: 10%;
+        left: 15%;
+    }
+    .formWindow .sectionHeader{
+        position: absolute;
+        font-size: 1em;
+        top: 5%;   
+    }
+    .inputGroup textarea{
+        max-height: 3em;
+        max-width: 15em;
+        min-width: 10em;
+    }
+    .copyRight{
+        width: 70%;
+        margin-left: 5%;
+    }
+    .copyText{
+        font-size: .7em;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        width: 100vw;
+    }
+    .header{
+        height: 100vh;
+        width: 100%;
+    }
+    .banner{
+        top: 25%;
+        left: 20%;
+    }
+    .banner h1{
+        font-size: 3em;
+        line-height: 1em;
+    }
+    .banner p{
+        font-size: 1.2em;
+        line-height: 1em;
+        width: 80%;
+    }
+    .banner button{
+        font-size: 1em;
+        width: 45%;
+    }
+    .sideBar{
+        width: 30vw;
+    }
+    .menuLink{
+        font-size: 1.5em;
+    }
+    .services{
+        height: 80vh;
+        position: absolute;
+        top: 20%;
+    }
+    .service:nth-child(1){
+        grid-column: 2/5;
+        grid-row: 1/3;
+    }
+    .service:nth-child(2){
+        grid-column: 2/5;
+        grid-row: 3/5;
+    }
+    .service:nth-child(3){
+        grid-column: 2/5;
+        grid-row: 5/-1;
+    }
+    .service:nth-child(4){
+        grid-column: 13/16;
+        grid-row: 1/3;
+    }
+    .service:nth-child(5){
+        grid-column: 13/16;
+        grid-row: 3/5;
+    }
+    .service:nth-child(6){
+        grid-column: 13/16;
+        grid-row: 5/-1;
+    }
+    .aboutImgDiv{
+        grid-column: 6/12;
+        grid-row: 2/6;
+    }
+    .serviceText{
+        font-size: .45em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .serviceHeader h3{
+        font-size: .7em;
+    }
+    .aboutImgDiv img{
+        object-fit: fill;
+    }
+    .cardInfo h2{
+        font-size: .8em;
+    }
+    .cardInfo h3{
+        font-size: .5em;
+    }
+    .cardInfo p{
+        font-size: .4em;
+    }
+    .inputGroup textarea{
+        max-height: 2em;
+        max-width: 15em;
+        min-width: 10em;
+    }
+    .copyRight{
+        width: 80%;
+        margin-left: 2%;
+    }
+    .copyText{
+        font-size: .6em;
+    }
+    .upArrow{
+        display: none;
+    }
+}
